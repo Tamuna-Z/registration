@@ -1,9 +1,13 @@
-import { useState } from "react";
+// import React from 'react';
 import "./App.css";
 import { useForm } from "react-hook-form";
 
+
+
+
+
 function App() {
-  const { register, handleSubmit, errors } = useForm();
+  const { register ,handleSubmit} = useForm();
 
   const onSubmitFunc=(data)=>{
     console.log(data);
@@ -11,7 +15,7 @@ function App() {
 
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(onSubmitFunc)}>
         <div>
           <label>Name</label>
           <input {...register("name")} />
@@ -24,7 +28,9 @@ function App() {
         <label>email</label>
           <input {...register("email")} />
         </div>
+        <button type="submit">register</button>
       </form>
+      
     </>
   );
 }
