@@ -1,21 +1,27 @@
 // import React from 'react';
 import "./App.css";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+import useLocalStorage from "./useLocalStorage";
 
 function App() {
+  const [value, setValue]=useLocalStorage('name','');
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const[hobby,setHobby]=useState('');
 
   const onSubmitFunc = (data) => {
     console.log(data);
   };
   console.log(errors);
+  console.log(hobby);
+
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmitFunc)}>
+      {/* <form onSubmit={handleSubmit(onSubmitFunc)}>
         <div>
           <label>Name</label>
           <input
@@ -30,6 +36,7 @@ function App() {
           <input {...register("surName",{
               pattern: { value: /^[A-Za-z]+$/i, message: "only alphabets" },
             })} />
+            {errors.surName && <p style={{ color: "red" }}>{errors.surName.message}</p>}
         </div>
         <div>
           <label>email</label>
@@ -48,7 +55,22 @@ function App() {
           )}
         </div>
         <button type="submit">register</button>
-      </form>
+      </form> */}
+
+      {/* <div style={{width:"300px",height:"400px",backgroundColor:"pink"}}>
+        <input onChange={(e) =>{
+          setHobby(e.target.value)}
+
+        }/>
+       
+      </div> */}
+
+      <input
+      type="text"
+      onChange={(event)=>setValue(event.target.value)}
+      value={value}
+      />
+      
     </>
   );
 }
