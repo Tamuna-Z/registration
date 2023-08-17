@@ -3,6 +3,8 @@ import "./App.css";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import useLocalStorage from "./useLocalStorage";
+import Practice from "./components/Practice";
+
 
 function App() {
   const [value, setValue]=useLocalStorage('name','');
@@ -11,6 +13,7 @@ function App() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const[hobby,setHobby]=useState('');
 
   const onSubmitFunc = (data) => {
@@ -18,6 +21,7 @@ function App() {
   };
   console.log(errors);
   console.log(hobby);
+  
 
   return (
     <>
@@ -64,7 +68,7 @@ function App() {
         }/>
        
       </div> */}
-
+<Practice/>
       <input
       type="text"
       onChange={(event)=>setValue(event.target.value)}
