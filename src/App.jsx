@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import useLocalStorage from "./useLocalStorage";
 import Practice from "./components/Practice";
+import MakeBalls from "./components/MakeBalls"
 
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
         }/>
        
       </div> */}
+      <MakeBalls/>
 <Practice/>
       <input
       type="text"
