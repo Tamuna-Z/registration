@@ -22,6 +22,7 @@ function MakeBalls() {
           setCurrentActionIndex(currentActionIndex + 1);
         }
       };
+
   
     const randomPosition = () => ({
       left: `${Math.random() * 80}%`,
@@ -41,6 +42,14 @@ function MakeBalls() {
             style={randomPosition()} // Set random position for every ball
           />
         ))}
+      </div>
+      <div class="parent">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
       </div>
     </div>
   )
